@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="系统,字典,服务," />
+  <meta name="keywords" content="jdk8,Predicate," />
 
 
 
@@ -79,19 +79,18 @@
 
 
 
-<meta name="description" content="前言初衷： 项目组代码中存在大量维护困难的枚举类， 数据库中的自定义数据维护等，出现多人维护出现唯一艰难的问题，故而创建字典服务解决这一痛点 系统定位：公司已存在热更新的开关类&#x2F;一次性文本配置服务，故而系统定位为一定量级的个性化数据字典的配置">
+<meta name="description" content="前言​    源码分析，应用，以及使用 源码翻译12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字典服务">
-<meta property="og:url" content="https://www.yinfujian.top/post/25180.html">
+<meta property="og:title" content="java.util.function.Predicate">
+<meta property="og:url" content="https://www.yinfujian.top/post/e0fbb3b4.html">
 <meta property="og:site_name" content="yinfujian&#39;s blogs">
-<meta property="og:description" content="前言初衷： 项目组代码中存在大量维护困难的枚举类， 数据库中的自定义数据维护等，出现多人维护出现唯一艰难的问题，故而创建字典服务解决这一痛点 系统定位：公司已存在热更新的开关类&#x2F;一次性文本配置服务，故而系统定位为一定量级的个性化数据字典的配置">
+<meta property="og:description" content="前言​    源码分析，应用，以及使用 源码翻译12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091929">
 <meta property="og:locale">
-<meta property="article:published_time" content="2022-01-10T11:44:02.000Z">
-<meta property="article:modified_time" content="2022-01-11T08:19:19.050Z">
+<meta property="article:published_time" content="2022-01-12T11:44:46.000Z">
+<meta property="article:modified_time" content="2022-01-14T06:50:18.912Z">
 <meta property="article:author" content="yinfujian">
-<meta property="article:tag" content="系统">
-<meta property="article:tag" content="字典">
-<meta property="article:tag" content="服务">
+<meta property="article:tag" content="jdk8">
+<meta property="article:tag" content="Predicate">
 <meta name="twitter:card" content="summary">
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://www.yinfujian.top/post/25180.html"/>
+  <link rel="canonical" href="https://www.yinfujian.top/post/e0fbb3b4.html"/>
 
 
 
 
 
-  <title>字典服务 | yinfujian's blogs</title>
+  <title>java.util.function.Predicate | yinfujian's blogs</title>
   
 
 
@@ -275,7 +274,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.yinfujian.top/post/25180.html">
+    <link itemprop="mainEntityOfPage" href="https://www.yinfujian.top/post/e0fbb3b4.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -292,7 +291,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">字典服务</h1>
+          <h1 class="post-title" itemprop="name headline">java.util.function.Predicate</h1>
         
 
         <div class="post-meta">
@@ -304,8 +303,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-10T19:44:02+08:00">
-                2022-01-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-01-12T19:44:46+08:00">
+                2022-01-12
               </time>
             
 
@@ -327,8 +326,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" itemprop="url" rel="index">
-                    <span itemprop="name">系统设计</span>
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java%E5%9F%BA%E7%A1%80/jdk%E6%BA%90%E7%A0%81/" itemprop="url" rel="index">
+                    <span itemprop="name">jdk源码</span>
                   </a>
                 </span>
 
@@ -345,8 +355,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/post/25180.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/post/25180.html" itemprop="commentCount"></span>
+                <a href="/post/e0fbb3b4.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/post/e0fbb3b4.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -354,7 +364,7 @@
 
           
           
-             <span id="/post/25180.html" class="leancloud_visitors" data-flag-title="字典服务">
+             <span id="/post/e0fbb3b4.html" class="leancloud_visitors" data-flag-title="java.util.function.Predicate">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -384,7 +394,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  113
+                  853
                 </span>
               
 
@@ -400,7 +410,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  4
                 </span>
               
             </div>
@@ -421,11 +431,17 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>初衷： 项目组代码中存在大量维护困难的枚举类， 数据库中的自定义数据维护等，出现多人维护出现唯一艰难的问题，故而创建字典服务解决这一痛点</p>
-<p>系统定位：公司已存在热更新的开关类/一次性文本配置服务，故而系统定位为一定量级的个性化数据字典的配置</p>
-<span id="more"></span>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    源码分析，应用，以及使用</p>
+<h1 id="源码翻译"><a href="#源码翻译" class="headerlink" title="源码翻译"></a>源码翻译</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.util.function;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Objects;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Represents a predicate (boolean-valued function) of one argument.一个参数的谓词（布尔值函数）</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * &lt;p&gt;This is a &lt;a href=&quot;package-summary.html&quot;&gt;functional interface&lt;/a&gt;</span></span><br><span class="line"><span class="comment"> * whose functional method is &#123;<span class="doctag">@link</span> #test(Object)&#125;.</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &lt;T&gt; the type of the input to the predicate 谓词的输入范型</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.8 jdk1.8后新增</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@FunctionalInterface</span>  函数式接口声明，表明这是一个只有一个抽象方法的接口</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Predicate</span>&lt;<span class="title">T</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Evaluates this predicate on the given argument。计算一个参数的谓词，也就是boolean值</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> t the input argument</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> &#123;<span class="doctag">@code</span> true&#125; if the input argument matches the predicate, 参数满足要求</span></span><br><span class="line"><span class="comment">     * otherwise &#123;<span class="doctag">@code</span> false&#125;</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">test</span><span class="params">(T t)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a composed predicate that represents a short-circuiting logical</span></span><br><span class="line"><span class="comment">     返回表示短路逻辑的组合谓词， 《短路与》。</span></span><br><span class="line"><span class="comment">     * AND of this predicate and another.  When evaluating the composed</span></span><br><span class="line"><span class="comment">     * predicate, if this predicate is &#123;<span class="doctag">@code</span> false&#125;, then the &#123;<span class="doctag">@code</span> other&#125;</span></span><br><span class="line"><span class="comment">     * predicate is not evaluated.</span></span><br><span class="line"><span class="comment">     * AND这个谓词和另一个谓词。计算组合谓词时，如果此谓词为&#123;<span class="doctag">@code</span> false&#125;，则不计算&#123;<span class="doctag">@code</span> other&#125;谓词。</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;Any exceptions thrown during evaluation of either predicate are relayed</span></span><br><span class="line"><span class="comment">     * to the caller; if evaluation of this predicate throws an exception, the</span></span><br><span class="line"><span class="comment">     * &#123;<span class="doctag">@code</span> other&#125; predicate will not be evaluated.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> other a predicate that will be logically-ANDed with this</span></span><br><span class="line"><span class="comment">     *              predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a composed predicate that represents the short-circuiting logical</span></span><br><span class="line"><span class="comment">     * AND of this predicate and the &#123;<span class="doctag">@code</span> other&#125; predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> NullPointerException if other is null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">  	<span class="keyword">default</span>方法</span><br><span class="line">    <span class="function"><span class="keyword">default</span> Predicate&lt;T&gt; <span class="title">and</span><span class="params">(Predicate&lt;? <span class="keyword">super</span> T&gt; other)</span> </span>&#123;</span><br><span class="line">        Objects.requireNonNull(other);</span><br><span class="line">        <span class="keyword">return</span> (t) -&gt; test(t) &amp;&amp; other.test(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a predicate that represents the logical negation of this</span></span><br><span class="line"><span class="comment">     * predicate.</span></span><br><span class="line"><span class="comment">     * 非运算</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a predicate that represents the logical negation of this</span></span><br><span class="line"><span class="comment">     * predicate</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> Predicate&lt;T&gt; <span class="title">negate</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (t) -&gt; !test(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a composed predicate that represents a short-circuiting logical</span></span><br><span class="line"><span class="comment">     * OR of this predicate and another.  When evaluating the composed</span></span><br><span class="line"><span class="comment">     * predicate, if this predicate is &#123;<span class="doctag">@code</span> true&#125;, then the &#123;<span class="doctag">@code</span> other&#125;</span></span><br><span class="line"><span class="comment">     * predicate is not evaluated.</span></span><br><span class="line"><span class="comment">     * 断路或</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;Any exceptions thrown during evaluation of either predicate are relayed</span></span><br><span class="line"><span class="comment">     * to the caller; if evaluation of this predicate throws an exception, the</span></span><br><span class="line"><span class="comment">     * &#123;<span class="doctag">@code</span> other&#125; predicate will not be evaluated.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> other a predicate that will be logically-ORed with this</span></span><br><span class="line"><span class="comment">     *              predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a composed predicate that represents the short-circuiting logical</span></span><br><span class="line"><span class="comment">     * OR of this predicate and the &#123;<span class="doctag">@code</span> other&#125; predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@throws</span> NullPointerException if other is null</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">default</span> Predicate&lt;T&gt; <span class="title">or</span><span class="params">(Predicate&lt;? <span class="keyword">super</span> T&gt; other)</span> </span>&#123;</span><br><span class="line">        Objects.requireNonNull(other);</span><br><span class="line">        <span class="keyword">return</span> (t) -&gt; test(t) || other.test(t);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns a predicate that tests if two arguments are equal according</span></span><br><span class="line"><span class="comment">     * to &#123;<span class="doctag">@link</span> Objects#equals(Object, Object)&#125;.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> &lt;T&gt; the type of arguments to the predicate</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> targetRef the object reference with which to compare for equality,</span></span><br><span class="line"><span class="comment">     *               which may be &#123;<span class="doctag">@code</span> null&#125;</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> a predicate that tests if two arguments are equal according</span></span><br><span class="line"><span class="comment">     * to &#123;<span class="doctag">@link</span> Objects#equals(Object, Object)&#125;</span></span><br><span class="line"><span class="comment">     返回一个谓词，该谓词根据&#123;<span class="doctag">@link</span> Objects#equals（Object，Object）&#125;测试两个参数是否相等。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">static</span> &lt;T&gt; <span class="function">Predicate&lt;T&gt; <span class="title">isEqual</span><span class="params">(Object targetRef)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">null</span> == targetRef)</span><br><span class="line">                ? Objects::isNull</span><br><span class="line">                : object -&gt; targetRef.equals(object);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<h1 id="调研"><a href="#调研" class="headerlink" title="调研"></a>调研</h1>
+
+
+<p>测试代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.yinfujian.PredicateM;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.function.Predicate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PredicateTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 定义一个字符串</span></span><br><span class="line">        String s = <span class="string">&quot;lalallla&quot;</span>;</span><br><span class="line">        Predicate&lt;String&gt; pre = s1 -&gt; s1.length() &gt; <span class="number">1</span>;</span><br><span class="line">        Predicate&lt;String&gt; pre1 = s1 -&gt; s1.length() &lt; <span class="number">10</span>;</span><br><span class="line">        Predicate&lt;String&gt; pre2 = s1 -&gt; s1.length() &lt; <span class="number">5</span>;</span><br><span class="line">        System.out.println(pre);</span><br><span class="line">        System.out.println(pre.test(s));</span><br><span class="line">        System.out.println(pre.negate().test(s));</span><br><span class="line">        System.out.println(pre.and(pre1).test(s));</span><br><span class="line">        System.out.println(pre.and(pre2).test(s));</span><br><span class="line">        System.out.println(pre.or(pre1).test(s));</span><br><span class="line">        System.out.println(pre.or(pre2).test(s));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">&quot;=======&quot;</span>);</span><br><span class="line">        System.out.println(Predicate.isEqual(<span class="string">&quot;lalallla&quot;</span>).test(s));</span><br><span class="line">        System.out.println(<span class="string">&quot;1111&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>1、函数式，只有test为抽象使用方法</p>
+<p>2、如参数的lambda表达式相当于test方法的实现。</p>
+
       
     </div>
     
@@ -453,11 +469,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%B3%BB%E7%BB%9F/" rel="tag"># 系统</a>
+            <a href="/tags/jdk8/" rel="tag"># jdk8</a>
           
-            <a href="/tags/%E5%AD%97%E5%85%B8/" rel="tag"># 字典</a>
-          
-            <a href="/tags/%E6%9C%8D%E5%8A%A1/" rel="tag"># 服务</a>
+            <a href="/tags/Predicate/" rel="tag"># Predicate</a>
           
         </div>
       
@@ -470,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/post/62094.html" rel="next" title="浅拷贝和深拷贝">
-                <i class="fa fa-chevron-left"></i> 浅拷贝和深拷贝
+              <a href="/post/38362.html" rel="next" title="递归案例">
+                <i class="fa fa-chevron-left"></i> 递归案例
               </a>
             
           </div>
@@ -480,8 +494,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/post/38362.html" rel="prev" title="递归案例">
-                递归案例 <i class="fa fa-chevron-right"></i>
+              <a href="/post/de592a66.html" rel="prev" title="java.lang.FunctionalInterface函数式接口声明注解">
+                java.lang.FunctionalInterface函数式接口声明注解 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -637,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E7%A0%94"><span class="nav-number">2.</span> <span class="nav-text">调研</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E7%BF%BB%E8%AF%91"><span class="nav-number">2.</span> <span class="nav-text">源码翻译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
