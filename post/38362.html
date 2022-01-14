@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="前言 递归算法（英语：recursion algorithm）在数学与计算机科学中，递归(Recursion)是指在函数的定义中使用函数自身的方法。实际上，递归，顾名思义，其包含了两个意思：递 和 归，这正是递归思想的精华所在。 本文未讲解递归什么原理，只是一次应用">
+<meta name="description" content="递归算法（英语：recursion algorithm）在数学与计算机科学中，递归(Recursion)是指在函数的定义中使用函数自身的方法。实际上，递归，顾名思义，其包含了两个意思：递 和 归，这正是递归思想的精华所在。 本文未讲解递归什么原理，只是一次应用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="递归案例">
 <meta property="og:url" content="https://www.yinfujian.top/post/38362.html">
 <meta property="og:site_name" content="yinfujian&#39;s blogs">
-<meta property="og:description" content="前言 递归算法（英语：recursion algorithm）在数学与计算机科学中，递归(Recursion)是指在函数的定义中使用函数自身的方法。实际上，递归，顾名思义，其包含了两个意思：递 和 归，这正是递归思想的精华所在。 本文未讲解递归什么原理，只是一次应用">
+<meta property="og:description" content="递归算法（英语：recursion algorithm）在数学与计算机科学中，递归(Recursion)是指在函数的定义中使用函数自身的方法。实际上，递归，顾名思义，其包含了两个意思：递 和 归，这正是递归思想的精华所在。 本文未讲解递归什么原理，只是一次应用">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-01-11T06:58:38.000Z">
-<meta property="article:modified_time" content="2022-01-11T11:47:02.397Z">
+<meta property="article:modified_time" content="2022-01-14T07:39:18.872Z">
 <meta property="article:author" content="yinfujian">
 <meta property="article:tag" content="递归">
 <meta name="twitter:card" content="summary">
@@ -382,7 +382,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  638
+                  636
                 </span>
               
 
@@ -419,7 +419,7 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
+        <blockquote>
 <p><strong>递归算法</strong>（英语：recursion algorithm）在数学与计算机科学中，递归(Recursion)是指在函数的定义中使用函数自身的方法。实际上，递归，顾名思义，其包含了两个意思：递 和 归，这正是递归思想的精华所在。</p>
 <p>本文未讲解递归什么原理，只是一次应用</p>
 </blockquote>
@@ -657,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E8%A6%81%E7%B4%A0"><span class="nav-number">2.1.</span> <span class="nav-text">递归要素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E6%8E%A8%E5%87%BA%E6%9D%A1%E4%BB%B6"><span class="nav-number">2.1.1.</span> <span class="nav-text">明确推出条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E2%80%9D%E9%80%92%E2%80%9D%E5%92%8C%E2%80%9D%E5%BD%92%E2%80%9D"><span class="nav-number">2.1.2.</span> <span class="nav-text">明确”递”和”归”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96"><span class="nav-number">2.1.3.</span> <span class="nav-text">递归条件的循环依赖</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BA%94%E7%94%A8"><span class="nav-number">1.</span> <span class="nav-text">应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E8%A6%81%E7%B4%A0"><span class="nav-number">1.1.</span> <span class="nav-text">递归要素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E6%8E%A8%E5%87%BA%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.1.1.</span> <span class="nav-text">明确推出条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%8E%E7%A1%AE%E2%80%9D%E9%80%92%E2%80%9D%E5%92%8C%E2%80%9D%E5%BD%92%E2%80%9D"><span class="nav-number">1.1.2.</span> <span class="nav-text">明确”递”和”归”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E6%9D%A1%E4%BB%B6%E7%9A%84%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96"><span class="nav-number">1.1.3.</span> <span class="nav-text">递归条件的循环依赖</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
