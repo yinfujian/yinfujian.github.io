@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 预留了一个泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后">
+<meta name="description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到泛型看完后处理 sp">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java自定义注解">
 <meta property="og:url" content="https://www.yinfujian.top/post/9cf0cacb.html">
 <meta property="og:site_name" content="yinfujian&#39;s blogs">
-<meta property="og:description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 预留了一个泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后">
+<meta property="og:description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到泛型看完后处理 sp">
 <meta property="og:locale">
 <meta property="og:image" content="file:///Users/a58/Documents/blogs/hexo/source/_posts/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/0001.jpeg?lastModify=1642557276">
 <meta property="og:image" content="file:///Users/a58/Documents/blogs/hexo/source/_posts/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/0002.jpeg?lastModify=1642557276">
 <meta property="article:published_time" content="2022-01-17T06:01:24.000Z">
-<meta property="article:modified_time" content="2022-01-19T07:39:18.843Z">
+<meta property="article:modified_time" content="2022-01-19T08:08:27.851Z">
 <meta property="article:author" content="yinfujian">
 <meta property="article:tag" content="jdk8">
 <meta property="article:tag" content="java基础">
@@ -397,7 +397,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  4.2k
+                  4.4k
                 </span>
               
 
@@ -413,7 +413,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  19
+                  20
                 </span>
               
             </div>
@@ -439,7 +439,8 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xsp_happyboy/article/details/80987484">https://blog.csdn.net/xsp_happyboy/article/details/80987484</a></p>
 <p><a target="_blank" rel="noopener" href="http://www.javashuo.com/article/p-oxsjvkvo-du.html">http://www.javashuo.com/article/p-oxsjvkvo-du.html</a></p>
 <p>自定义注解的概念，语法，使用</p>
-<p>预留了一个泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后处理</p>
+<p>泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到泛型看完后处理</p>
+<p>spring中的注解，系统学习过后总结添加</p>
 </blockquote>
 <span id="more"></span>
 
@@ -608,6 +609,11 @@
 <h3 id="Repeatable"><a href="#Repeatable" class="headerlink" title="@Repeatable"></a>@Repeatable</h3><p>jdk8 新增的对注解的支持</p>
 <p>​    参考链接：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34515959/article/details/105189261">https://blog.csdn.net/qq_34515959/article/details/105189261</a></p>
 <p>​    主要内容为：新增@Repeatable元注解，使用方式见链接</p>
+<h2 id="Native"><a href="#Native" class="headerlink" title="@Native"></a>@Native</h2><p>源码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Target(ElementType.FIELD)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.SOURCE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Native &#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>since 1.8</p>
+<p>指示定义常量值的字段可以从本机代码引用。生成本机头文件的工具可以使用注释作为提示，以确定是否需要头文件，以及如果需要，头文件应包含哪些声明。</p>
 <h2 id="spring对注解的增强-AliasFor"><a href="#spring对注解的增强-AliasFor" class="headerlink" title="spring对注解的增强*@AliasFor*"></a>spring对注解的增强*@AliasFor*</h2><h3 id="提出问题"><a href="#提出问题" class="headerlink" title="提出问题"></a>提出问题</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@interface</span> Ann1 &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> &quot;Ann1&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Ann1</span></span><br><span class="line"><span class="meta">@interface</span> Ann2 &#123;</span><br><span class="line">    <span class="function">String <span class="title">value</span><span class="params">()</span> <span class="keyword">default</span> &quot;Ann2&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Ann2(&quot;Ann2注解在SpringAnnoTest1类上&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SpringAnnoTest1</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(AnnotatedElementUtils.getMergedAnnotation(SpringAnnoTest1.class, Ann2.class));</span><br><span class="line">        System.out.println(AnnotatedElementUtils.getMergedAnnotation(SpringAnnoTest1.class, Ann1.class));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>执行结果</p>
@@ -635,8 +641,16 @@
 <p>当@AliasFor中不指定value或者attribute的时候，自动将@AliasFor修饰的参数做为value和attribute的值，以下@AliasFor注解的value参数值为value1</p>
 <h3 id="AnnotatedElementUtils"><a href="#AnnotatedElementUtils" class="headerlink" title="AnnotatedElementUtils"></a>AnnotatedElementUtils</h3><p>spring提供的注解获取工具类</p>
 <hr>
-<h1 id="常用的注解"><a href="#常用的注解" class="headerlink" title="常用的注解"></a>常用的注解</h1><h3 id="Override"><a href="#Override" class="headerlink" title="@Override"></a>@Override</h3><p>​    标注实现</p>
-<p>​    </p>
+<h1 id="常用的注解"><a href="#常用的注解" class="headerlink" title="常用的注解"></a>常用的注解</h1><h3 id="jdk中的原生注解"><a href="#jdk中的原生注解" class="headerlink" title="jdk中的原生注解"></a>jdk中的原生注解</h3><p>​    标注实现</p>
+<p>@Deprecated:用于标志过时的类、方法和成员变量</p>
+<p>@Override:用于修饰重写的方法</p>
+<p>@SuppressWarnings:用于忽略@Deprecated标志过的警告</p>
+<p>@SafeVarargs：参数安全类型注解，用于提示用户参数安全(JDK1.7)</p>
+<p>@FunctionalInterface：函数式接口注解，用于定义函数式接口(JDK1.8)</p>
+<p>范例</p>
+<p>@Override的作用是，提示编译器，使用了@Override注解的方法必须override父类或者java.lang.Object中的一个同名方法。</p>
+<p>表示 @Override 只能使用在方法上，保留在源码级别，被编译器处理，然后抛弃掉。</p>
+<h3 id="spring中的注解"><a href="#spring中的注解" class="headerlink" title="spring中的注解"></a>spring中的注解</h3><p>系统学习后添加</p>
 
       
     </div>
@@ -843,7 +857,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">注解的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">官方定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E4%BD%BF%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">1.2.</span> <span class="nav-text">官方使用范围</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="nav-number">2.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="nav-number">2.2.</span> <span class="nav-text">常用的元注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">2.2.1.</span> <span class="nav-text">@Target</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#target%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">target测试案例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retention"><span class="nav-number">2.2.2.</span> <span class="nav-text">@Retention</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%B5%8B%E8%AF%95"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">注解生命周期测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#RetentionPolicy-SOURCE"><span class="nav-number">2.2.2.1.1.</span> <span class="nav-text">RetentionPolicy.SOURCE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RetentionPolicy-CLASS"><span class="nav-number">2.2.2.1.2.</span> <span class="nav-text">RetentionPolicy.CLASS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RetentionPolicy-RUNTIME"><span class="nav-number">2.2.2.1.3.</span> <span class="nav-text">RetentionPolicy.RUNTIME</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inherited"><span class="nav-number">2.2.3.</span> <span class="nav-text">@Inherited</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Documented"><span class="nav-number">2.2.4.</span> <span class="nav-text">@Documented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repeatable"><span class="nav-number">2.2.5.</span> <span class="nav-text">@Repeatable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring%E5%AF%B9%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%A2%9E%E5%BC%BA-AliasFor"><span class="nav-number">2.3.</span> <span class="nav-text">spring对注解的增强*@AliasFor*</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.3.1.</span> <span class="nav-text">提出问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aliasfor%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">2.3.2.</span> <span class="nav-text">Aliasfor解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AliasFor%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E6%B3%A8%E8%A7%A3%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">2.3.3.</span> <span class="nav-text">AliasFor在同一个注解中使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-number">2.3.4.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%8C%87%E5%AE%9Avalue%E5%92%8Cattribute%E6%97%B6"><span class="nav-number">2.3.5.</span> <span class="nav-text">不指定value和attribute时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AnnotatedElementUtils"><span class="nav-number">2.3.6.</span> <span class="nav-text">AnnotatedElementUtils</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">常用的注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Override"><span class="nav-number">3.0.1.</span> <span class="nav-text">@Override</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">注解的概念</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">官方定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E4%BD%BF%E7%94%A8%E8%8C%83%E5%9B%B4"><span class="nav-number">1.2.</span> <span class="nav-text">官方使用范围</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E"><span class="nav-number">2.1.</span> <span class="nav-text">声明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%85%83%E6%B3%A8%E8%A7%A3"><span class="nav-number">2.2.</span> <span class="nav-text">常用的元注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Target"><span class="nav-number">2.2.1.</span> <span class="nav-text">@Target</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#target%E6%B5%8B%E8%AF%95%E6%A1%88%E4%BE%8B"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">target测试案例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retention"><span class="nav-number">2.2.2.</span> <span class="nav-text">@Retention</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B3%A8%E8%A7%A3%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%B5%8B%E8%AF%95"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">注解生命周期测试</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#RetentionPolicy-SOURCE"><span class="nav-number">2.2.2.1.1.</span> <span class="nav-text">RetentionPolicy.SOURCE</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RetentionPolicy-CLASS"><span class="nav-number">2.2.2.1.2.</span> <span class="nav-text">RetentionPolicy.CLASS</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RetentionPolicy-RUNTIME"><span class="nav-number">2.2.2.1.3.</span> <span class="nav-text">RetentionPolicy.RUNTIME</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inherited"><span class="nav-number">2.2.3.</span> <span class="nav-text">@Inherited</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Documented"><span class="nav-number">2.2.4.</span> <span class="nav-text">@Documented</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Repeatable"><span class="nav-number">2.2.5.</span> <span class="nav-text">@Repeatable</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Native"><span class="nav-number">2.3.</span> <span class="nav-text">@Native</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spring%E5%AF%B9%E6%B3%A8%E8%A7%A3%E7%9A%84%E5%A2%9E%E5%BC%BA-AliasFor"><span class="nav-number">2.4.</span> <span class="nav-text">spring对注解的增强*@AliasFor*</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E5%87%BA%E9%97%AE%E9%A2%98"><span class="nav-number">2.4.1.</span> <span class="nav-text">提出问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aliasfor%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">2.4.2.</span> <span class="nav-text">Aliasfor解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AliasFor%E5%9C%A8%E5%90%8C%E4%B8%80%E4%B8%AA%E6%B3%A8%E8%A7%A3%E4%B8%AD%E4%BD%BF%E7%94%A8"><span class="nav-number">2.4.3.</span> <span class="nav-text">AliasFor在同一个注解中使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-number">2.4.4.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8D%E6%8C%87%E5%AE%9Avalue%E5%92%8Cattribute%E6%97%B6"><span class="nav-number">2.4.5.</span> <span class="nav-text">不指定value和attribute时</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AnnotatedElementUtils"><span class="nav-number">2.4.6.</span> <span class="nav-text">AnnotatedElementUtils</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="nav-number">3.</span> <span class="nav-text">常用的注解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#jdk%E4%B8%AD%E7%9A%84%E5%8E%9F%E7%94%9F%E6%B3%A8%E8%A7%A3"><span class="nav-number">3.0.1.</span> <span class="nav-text">jdk中的原生注解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring%E4%B8%AD%E7%9A%84%E6%B3%A8%E8%A7%A3"><span class="nav-number">3.0.2.</span> <span class="nav-text">spring中的注解</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -884,7 +898,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.3k</span>
+    <span title="Site words total count">11.6k</span>
   
 </div>
 
