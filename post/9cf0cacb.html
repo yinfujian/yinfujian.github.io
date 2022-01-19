@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 预留了一个范型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后">
+<meta name="description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 预留了一个泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java自定义注解">
 <meta property="og:url" content="https://www.yinfujian.top/post/9cf0cacb.html">
 <meta property="og:site_name" content="yinfujian&#39;s blogs">
-<meta property="og:description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 预留了一个范型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后">
+<meta property="og:description" content="参考文章： https:&#x2F;&#x2F;blog.csdn.net&#x2F;xsp_happyboy&#x2F;article&#x2F;details&#x2F;80987484 http:&#x2F;&#x2F;www.javashuo.com&#x2F;article&#x2F;p-oxsjvkvo-du.html 自定义注解的概念，语法，使用 预留了一个泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后">
 <meta property="og:locale">
 <meta property="og:image" content="file:///Users/a58/Documents/blogs/hexo/source/_posts/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/0001.jpeg?lastModify=1642557276">
 <meta property="og:image" content="file:///Users/a58/Documents/blogs/hexo/source/_posts/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/0002.jpeg?lastModify=1642557276">
 <meta property="article:published_time" content="2022-01-17T06:01:24.000Z">
-<meta property="article:modified_time" content="2022-01-19T07:23:01.327Z">
+<meta property="article:modified_time" content="2022-01-19T07:39:18.843Z">
 <meta property="article:author" content="yinfujian">
 <meta property="article:tag" content="jdk8">
 <meta property="article:tag" content="java基础">
@@ -439,7 +439,7 @@
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/xsp_happyboy/article/details/80987484">https://blog.csdn.net/xsp_happyboy/article/details/80987484</a></p>
 <p><a target="_blank" rel="noopener" href="http://www.javashuo.com/article/p-oxsjvkvo-du.html">http://www.javashuo.com/article/p-oxsjvkvo-du.html</a></p>
 <p>自定义注解的概念，语法，使用</p>
-<p>预留了一个范型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后处理</p>
+<p>预留了一个泛型（ElementType.TYPE_PARAMETER，ElementType.TYPE_USE）的问题，等到范型看完后处理</p>
 </blockquote>
 <span id="more"></span>
 
@@ -551,7 +551,7 @@
 <p><img src="file:///Users/a58/Documents/blogs/hexo/source/_posts/java%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3/0002.jpeg?lastModify=1642557276" alt="0002"></p>
 </li>
 </ul>
-<p><strong>范型解析问题</strong></p>
+<p><strong>泛型解析问题</strong></p>
 <h3 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h3><p>源代码</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Target(ElementType.ANNOTATION_TYPE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> Retention &#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Returns the retention policy.</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@return</span> the retention policy</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function">RetentionPolicy <span class="title">value</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
