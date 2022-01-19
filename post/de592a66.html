@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="jdk8,FunctionalInterface," />
+  <meta name="keywords" content="FunctionalInterface,jdk8," />
 
 
 
@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="源码翻译 总结以及测试">
+<meta name="description" content="源码 总结以及测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java.lang.FunctionalInterface函数式接口声明注解">
+<meta property="og:title" content="java.lang.FunctionalInterface">
 <meta property="og:url" content="https://www.yinfujian.top/post/de592a66.html">
 <meta property="og:site_name" content="yinfujian&#39;s blogs">
-<meta property="og:description" content="源码翻译 总结以及测试">
+<meta property="og:description" content="源码 总结以及测试">
 <meta property="og:locale">
 <meta property="og:image" content="https://www.yinfujian.top/post/de592a66/functionalInterface.png">
 <meta property="article:published_time" content="2022-01-13T01:59:09.000Z">
-<meta property="article:modified_time" content="2022-01-14T07:38:34.949Z">
+<meta property="article:modified_time" content="2022-01-14T08:26:36.568Z">
 <meta property="article:author" content="yinfujian">
-<meta property="article:tag" content="jdk8">
 <meta property="article:tag" content="FunctionalInterface">
+<meta property="article:tag" content="jdk8">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.yinfujian.top/post/de592a66/functionalInterface.png">
 
@@ -129,7 +129,7 @@
 
 
 
-  <title>java.lang.FunctionalInterface函数式接口声明注解 | yinfujian's blogs</title>
+  <title>java.lang.FunctionalInterface | yinfujian's blogs</title>
   
 
 
@@ -293,7 +293,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">java.lang.FunctionalInterface函数式接口声明注解</h1>
+          <h1 class="post-title" itemprop="name headline">java.lang.FunctionalInterface</h1>
         
 
         <div class="post-meta">
@@ -366,7 +366,7 @@
 
           
           
-             <span id="/post/de592a66.html" class="leancloud_visitors" data-flag-title="java.lang.FunctionalInterface函数式接口声明注解">
+             <span id="/post/de592a66.html" class="leancloud_visitors" data-flag-title="java.lang.FunctionalInterface">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -396,7 +396,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  866
+                  862
                 </span>
               
 
@@ -434,12 +434,12 @@
 
       
         <blockquote>
-<p>源码翻译</p>
+<p>源码</p>
 <p>总结以及测试</p>
 </blockquote>
 <span id="more"></span>
 
-<h1 id="源码翻译"><a href="#源码翻译" class="headerlink" title="源码翻译"></a>源码翻译</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.lang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * An informative annotation type used to indicate that an interface</span></span><br><span class="line"><span class="comment"> * type declaration is intended to be a &lt;i&gt;functional interface&lt;/i&gt; as</span></span><br><span class="line"><span class="comment"> * defined by the Java Language Specification.</span></span><br><span class="line"><span class="comment"> * 一种信息性注释类型，用于指示接口类型声明是Java语言规范定义的功能接口。</span></span><br><span class="line"><span class="comment"> * Conceptually, a functional interface has exactly one abstract</span></span><br><span class="line"><span class="comment"> * method.  Since &#123;<span class="doctag">@linkplain</span> java.lang.reflect.Method#isDefault()</span></span><br><span class="line"><span class="comment"> * default methods&#125; have an implementation, they are not abstract.  If</span></span><br><span class="line"><span class="comment"> * an interface declares an abstract method overriding one of the</span></span><br><span class="line"><span class="comment"> * public methods of &#123;<span class="doctag">@code</span> java.lang.Object&#125;, that also does</span></span><br><span class="line"><span class="comment"> * &lt;em&gt;not&lt;/em&gt; count toward the interface&#x27;s abstract method count</span></span><br><span class="line"><span class="comment"> * since any implementation of the interface will have an</span></span><br><span class="line"><span class="comment"> * implementation from &#123;<span class="doctag">@code</span> java.lang.Object&#125; or elsewhere.</span></span><br><span class="line"><span class="comment"> * 从概念上讲，函数接口只有一个抽象方法。因为&#123;<span class="doctag">@linkplain</span> java.lang.reflect.Method#isDefault（）default methods&#125;有一个实现，所以它们不是抽象的。如果接口声明了一个抽象方法，该方法重写了&#123;<span class="doctag">@code</span> java.lang.Object&#125;的一个公共方法，那么这也不计入接口的抽象方法计数，因为接口的任何实现都将有一个来自&#123;<span class="doctag">@code</span> java.lang.Object&#125;或其他地方的实现。</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;Note that instances of functional interfaces can be created with</span></span><br><span class="line"><span class="comment"> * lambda expressions, method references, or constructor references.</span></span><br><span class="line"><span class="comment"> * 请注意，可以使用lambda表达式、方法引用或构造函数引用创建函数接口的实例。</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;If a type is annotated with this annotation type, compilers are</span></span><br><span class="line"><span class="comment"> * required to generate an error message unless:</span></span><br><span class="line"><span class="comment"> * 如果使用此注释类型对类型进行注释，则编译器需要生成错误消息，除非：</span></span><br><span class="line"><span class="comment"> * &lt;ul&gt;</span></span><br><span class="line"><span class="comment"> * &lt;li&gt; The type is an interface type and not an annotation type, enum, or class.</span></span><br><span class="line"><span class="comment"> 类型是接口类型，而不是注释类型、枚举或类。</span></span><br><span class="line"><span class="comment"> * &lt;li&gt; The annotated type satisfies the requirements of a functional interface.</span></span><br><span class="line"><span class="comment"> 带注释的类型满足函数接口的要求。</span></span><br><span class="line"><span class="comment"> * &lt;/ul&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;However, the compiler will treat any interface meeting the</span></span><br><span class="line"><span class="comment"> * definition of a functional interface as a functional interface</span></span><br><span class="line"><span class="comment"> * regardless of whether or not a &#123;<span class="doctag">@code</span> FunctionalInterface&#125;</span></span><br><span class="line"><span class="comment"> * annotation is present on the interface declaration.</span></span><br><span class="line"><span class="comment"> * 但是，编译器将把满足函数接口定义的任何接口视为函数接口，而不管接口声明上是否存在&#123;<span class="doctag">@code</span> functioninterface&#125;注释。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@jls</span> 4.3.2. The Class Object</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@jls</span> 9.8 Functional Interfaces</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@jls</span> 9.4.3 Interface Method Body</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> FunctionalInterface &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.lang;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * An informative annotation type used to indicate that an interface</span></span><br><span class="line"><span class="comment"> * type declaration is intended to be a &lt;i&gt;functional interface&lt;/i&gt; as</span></span><br><span class="line"><span class="comment"> * defined by the Java Language Specification.</span></span><br><span class="line"><span class="comment"> * 一种信息性注释类型，用于指示接口类型声明是Java语言规范定义的功能接口。</span></span><br><span class="line"><span class="comment"> * Conceptually, a functional interface has exactly one abstract</span></span><br><span class="line"><span class="comment"> * method.  Since &#123;<span class="doctag">@linkplain</span> java.lang.reflect.Method#isDefault()</span></span><br><span class="line"><span class="comment"> * default methods&#125; have an implementation, they are not abstract.  If</span></span><br><span class="line"><span class="comment"> * an interface declares an abstract method overriding one of the</span></span><br><span class="line"><span class="comment"> * public methods of &#123;<span class="doctag">@code</span> java.lang.Object&#125;, that also does</span></span><br><span class="line"><span class="comment"> * &lt;em&gt;not&lt;/em&gt; count toward the interface&#x27;s abstract method count</span></span><br><span class="line"><span class="comment"> * since any implementation of the interface will have an</span></span><br><span class="line"><span class="comment"> * implementation from &#123;<span class="doctag">@code</span> java.lang.Object&#125; or elsewhere.</span></span><br><span class="line"><span class="comment"> * 从概念上讲，函数接口只有一个抽象方法。因为&#123;<span class="doctag">@linkplain</span> java.lang.reflect.Method#isDefault（）default methods&#125;有一个实现，所以它们不是抽象的。如果接口声明了一个抽象方法，该方法重写了&#123;<span class="doctag">@code</span> java.lang.Object&#125;的一个公共方法，那么这也不计入接口的抽象方法计数，因为接口的任何实现都将有一个来自&#123;<span class="doctag">@code</span> java.lang.Object&#125;或其他地方的实现。</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;Note that instances of functional interfaces can be created with</span></span><br><span class="line"><span class="comment"> * lambda expressions, method references, or constructor references.</span></span><br><span class="line"><span class="comment"> * 请注意，可以使用lambda表达式、方法引用或构造函数引用创建函数接口的实例。</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;If a type is annotated with this annotation type, compilers are</span></span><br><span class="line"><span class="comment"> * required to generate an error message unless:</span></span><br><span class="line"><span class="comment"> * 如果使用此注释类型对类型进行注释，则编译器需要生成错误消息，除非：</span></span><br><span class="line"><span class="comment"> * &lt;ul&gt;</span></span><br><span class="line"><span class="comment"> * &lt;li&gt; The type is an interface type and not an annotation type, enum, or class.</span></span><br><span class="line"><span class="comment"> 类型是接口类型，而不是注释类型、枚举或类。</span></span><br><span class="line"><span class="comment"> * &lt;li&gt; The annotated type satisfies the requirements of a functional interface.</span></span><br><span class="line"><span class="comment"> 带注释的类型满足函数接口的要求。</span></span><br><span class="line"><span class="comment"> * &lt;/ul&gt;</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * &lt;p&gt;However, the compiler will treat any interface meeting the</span></span><br><span class="line"><span class="comment"> * definition of a functional interface as a functional interface</span></span><br><span class="line"><span class="comment"> * regardless of whether or not a &#123;<span class="doctag">@code</span> FunctionalInterface&#125;</span></span><br><span class="line"><span class="comment"> * annotation is present on the interface declaration.</span></span><br><span class="line"><span class="comment"> * 但是，编译器将把满足函数接口定义的任何接口视为函数接口，而不管接口声明上是否存在&#123;<span class="doctag">@code</span> functioninterface&#125;注释。</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@jls</span> 4.3.2. The Class Object</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@jls</span> 9.8 Functional Interfaces</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@jls</span> 9.4.3 Interface Method Body</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@since</span> 1.8</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Documented</span></span><br><span class="line"><span class="meta">@Retention(RetentionPolicy.RUNTIME)</span></span><br><span class="line"><span class="meta">@Target(ElementType.TYPE)</span></span><br><span class="line"><span class="keyword">public</span> <span class="meta">@interface</span> FunctionalInterface &#123;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
 
@@ -482,9 +482,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/jdk8/" rel="tag"># jdk8</a>
-          
             <a href="/tags/FunctionalInterface/" rel="tag"># FunctionalInterface</a>
+          
+            <a href="/tags/jdk8/" rel="tag"># jdk8</a>
           
         </div>
       
@@ -593,7 +593,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -604,7 +604,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -615,7 +615,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -664,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E7%BF%BB%E8%AF%91"><span class="nav-number">1.</span> <span class="nav-text">源码翻译</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%A6%82%E4%B8%8B"><span class="nav-number">3.</span> <span class="nav-text">测试如下</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%90%E7%A0%81"><span class="nav-number">1.</span> <span class="nav-text">源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E5%A6%82%E4%B8%8B"><span class="nav-number">3.</span> <span class="nav-text">测试如下</span></a></li></ol></div>
             
 
           </div>
@@ -705,7 +705,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">6.6k</span>
+    <span title="Site words total count">11.3k</span>
   
 </div>
 
